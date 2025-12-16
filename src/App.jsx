@@ -8,7 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />

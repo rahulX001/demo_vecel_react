@@ -13,8 +13,8 @@ const Home = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
-      <h1>Welcome to MERN Auth App</h1>
+    <div className="min-h-screen flex flex-col justify-center items-center"> 
+      <h1 className="text-red-400 text-5xl mb-10 ">Welcome to MERN Auth App</h1>
 
       {user ? (
         <>
@@ -24,11 +24,11 @@ const Home = () => {
           <button onClick={logout}>Logout</button>
         </>
       ) : (
-        <>
-          <Link to="/login">Login</Link>
-          <br />
-          <Link to="/register">Register</Link>
-        </>
+        <div className="text-xl">
+          <Link to="/login" className="px-2 border rounded-md mr-2">Login</Link>
+          
+          <Link to="/register" className="px-2 border rounded-md ">Register</Link>
+        </div>
       )}
     </div>
   );
