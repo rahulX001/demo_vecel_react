@@ -12,8 +12,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.post("/auth/login", { email, password });
-      const res = await api.get("/auth/profile");
+      const res = await api.post("/auth/login", { email, password });
+      localStorage.setItem("token", res.data.token);
       setUser(res.data);
       navigate("/profile");
     } catch (err) {
